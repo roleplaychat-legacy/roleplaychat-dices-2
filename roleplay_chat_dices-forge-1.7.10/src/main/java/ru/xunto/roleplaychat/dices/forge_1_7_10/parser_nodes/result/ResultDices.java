@@ -20,6 +20,8 @@ public class ResultDices implements IResult {
 
     @Override
     public String getHumanReadable() {
+        if (dices.size() > 10) return String.format("{%d}", this.getFinalResult());
+
         Optional<String> reduce = this.dices.stream().map(ResultNumber::getHumanReadable).reduce((a, b) -> a + "," + b);
         return "[" + reduce.get() + "]";
     }
