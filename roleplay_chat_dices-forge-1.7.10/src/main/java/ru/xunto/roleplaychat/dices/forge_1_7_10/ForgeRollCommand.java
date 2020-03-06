@@ -18,6 +18,11 @@ public class ForgeRollCommand extends CommandBase {
     }
 
     @Override
+    public int getRequiredPermissionLevel() {
+        return 0;
+    }
+
+    @Override
     public String getCommandUsage(ICommandSender sender) {
         return null;
     }
