@@ -1,9 +1,9 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.roll;
+package ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll;
 
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.IResult;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.IRoll;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.result.ResultDices;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.result.ResultNumber;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IResult;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IRoll;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.result.ResultDice;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.result.ResultDices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +20,15 @@ public class RollDice implements IRoll {
         this.sides = sides;
     }
 
+    public int getSides() {
+        return sides;
+    }
+
     @Override
     public IResult roll() {
-        List<ResultNumber> dices = new ArrayList<>();
+        List<ResultDice> dices = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
-            dices.add(new ResultNumber(random.nextInt(this.sides) + 1));
+            dices.add(new ResultDice(this, random.nextInt(this.sides) + 1));
         }
 
         return new ResultDices(dices);

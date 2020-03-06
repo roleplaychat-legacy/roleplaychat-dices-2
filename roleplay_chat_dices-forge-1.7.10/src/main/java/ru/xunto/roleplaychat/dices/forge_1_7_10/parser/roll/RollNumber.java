@@ -1,8 +1,8 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.roll;
+package ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll;
 
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.IResult;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.IRoll;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.result.ResultNumber;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IResult;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IRoll;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.result.ResultNumber;
 
 public class RollNumber implements IRoll {
     private int number;

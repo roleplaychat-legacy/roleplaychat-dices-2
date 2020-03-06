@@ -1,4 +1,4 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes;
+package ru.xunto.roleplaychat.dices.forge_1_7_10.parser;
 
 public interface IRoll {
     IResult roll();

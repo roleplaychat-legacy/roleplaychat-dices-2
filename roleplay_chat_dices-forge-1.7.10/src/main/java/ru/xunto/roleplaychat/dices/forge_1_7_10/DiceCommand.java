@@ -4,11 +4,12 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import ru.xunto.roleplaychat.RoleplayChatCore;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.IResult;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.IRoll;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.roll.RollDice;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.roll.RollNumber;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser_nodes.roll.RollSum;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IResult;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IRoll;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.colored.TextPart;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollDice;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollNumber;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollSum;
 import ru.xunto.roleplaychat.forge_1_7_10.ForgeSpeaker;
 import ru.xunto.roleplaychat.forge_1_7_10.ForgeWorld;
 import ru.xunto.roleplaychat.framework.api.Environment;
@@ -19,9 +20,11 @@ import ru.xunto.roleplaychat.framework.renderer.text.TextColor;
 import ru.xunto.roleplaychat.framework.state.IProperty;
 import ru.xunto.roleplaychat.framework.state.Property;
 
+import java.util.List;
+
 public class DiceCommand extends CommandBase {
     public static IProperty<IRoll> roll = new Property<>("roll");
-    public static IProperty<IResult> result = new Property<>("result");
+    public static IProperty<List<TextPart>> result = new Property<>("result");
     public static IProperty<Integer> finalResult = new Property<>("final_result");
     private static JTwigTemplate template = new JTwigTemplate("assets/roleplaychatdices/templates/dices.twig");
 
@@ -50,7 +53,7 @@ public class DiceCommand extends CommandBase {
         environment.getColors().put("critical_failure", TextColor.RED);
 
         state.setValue(DiceCommand.roll, roll);
-        state.setValue(DiceCommand.result, result);
+        state.setValue(DiceCommand.result, result.getColoredResult().build());
         state.setValue(DiceCommand.finalResult, result.getFinalResult());
 
         RoleplayChatCore.instance.process(request, environment);

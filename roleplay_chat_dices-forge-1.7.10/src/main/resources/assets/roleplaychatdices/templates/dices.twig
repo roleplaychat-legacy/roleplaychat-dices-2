@@ -1,1 +1,3 @@
-[Dice] {{ username }} бросает кости: {{ roll.getHumanReadable() }} = {{ result.getHumanReadable() }}={{ final_result }}
+[Dice] {{ username }} бросает кости: {{ roll.getHumanReadable() }} = {% for part in result -%}
+{{part.getContent() | wrapColor(part.getMarker())}}
+{%- endfor %}={{ final_result }}
