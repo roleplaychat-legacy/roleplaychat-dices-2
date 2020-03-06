@@ -1,6 +1,6 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser;
+package ru.xunto.roleplaychat.dices.parser;
 
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.colored.ColoredBuilder;
+import ru.xunto.roleplaychat.dices.parser.colored.ColoredBuilder;
 
 public interface IResult {
     int getFinalResult();

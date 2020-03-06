@@ -17,6 +17,6 @@ public class RoleplayChatDices {
         ICommandManager command = server.getCommandManager();
         ServerCommandManager manager = (ServerCommandManager) command;
 
-        manager.registerCommand(new DiceCommand());
+        manager.registerCommand(new ForgeRollCommand());
     }
 }

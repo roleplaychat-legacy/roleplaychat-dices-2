@@ -1,4 +1,4 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser.colored;
+package ru.xunto.roleplaychat.dices.parser.colored;
 
 import java.util.ArrayList;
 import java.util.List;

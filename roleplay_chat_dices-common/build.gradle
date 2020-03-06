@@ -1,0 +1,4 @@
+dependencies {
+    compile group: 'org.jparsec', name: 'jparsec', version: '3.0'
+    compile fileTree("libs")
+}

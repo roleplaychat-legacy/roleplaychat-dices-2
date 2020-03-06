@@ -1,9 +1,9 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll;
+package ru.xunto.roleplaychat.dices.parser.roll;
 
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IResult;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IRoll;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.result.ResultDice;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.result.ResultDices;
+import ru.xunto.roleplaychat.dices.parser.IResult;
+import ru.xunto.roleplaychat.dices.parser.IRoll;
+import ru.xunto.roleplaychat.dices.parser.result.ResultDice;
+import ru.xunto.roleplaychat.dices.parser.result.ResultDices;
 
 import java.util.ArrayList;
 import java.util.List;

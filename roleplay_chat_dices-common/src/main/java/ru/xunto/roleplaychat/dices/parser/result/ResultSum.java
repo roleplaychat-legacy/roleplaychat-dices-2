@@ -1,7 +1,7 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser.result;
+package ru.xunto.roleplaychat.dices.parser.result;
 
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IResult;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.colored.ColoredBuilder;
+import ru.xunto.roleplaychat.dices.parser.IResult;
+import ru.xunto.roleplaychat.dices.parser.colored.ColoredBuilder;
 
 public class ResultSum implements IResult {
     private final IResult result1;

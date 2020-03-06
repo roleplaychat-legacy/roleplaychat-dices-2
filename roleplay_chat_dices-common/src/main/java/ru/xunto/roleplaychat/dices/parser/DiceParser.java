@@ -1,13 +1,13 @@
-package ru.xunto.roleplaychat.dices.forge_1_7_10.parser;
+package ru.xunto.roleplaychat.dices.parser;
 
 import org.jparsec.OperatorTable;
 import org.jparsec.Parser;
 import org.jparsec.Parsers;
 import org.jparsec.Scanners;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollDice;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollNumber;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollSub;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollSum;
+import ru.xunto.roleplaychat.dices.parser.roll.RollDice;
+import ru.xunto.roleplaychat.dices.parser.roll.RollNumber;
+import ru.xunto.roleplaychat.dices.parser.roll.RollSub;
+import ru.xunto.roleplaychat.dices.parser.roll.RollSum;
 
 import java.util.function.BinaryOperator;
 
