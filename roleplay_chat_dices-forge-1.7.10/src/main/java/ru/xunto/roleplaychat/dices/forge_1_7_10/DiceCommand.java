@@ -46,6 +46,8 @@ public class DiceCommand extends CommandBase {
 
         environment.setTemplate(template);
         environment.getColors().put("default", TextColor.GOLD);
+        environment.getColors().put("critical_success", TextColor.GREEN);
+        environment.getColors().put("critical_failure", TextColor.RED);
 
         state.setValue(DiceCommand.roll, roll);
         state.setValue(DiceCommand.result, result);
