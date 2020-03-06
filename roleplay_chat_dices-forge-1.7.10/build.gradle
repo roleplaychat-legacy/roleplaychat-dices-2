@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 version = modVersion
 group = modGroup
-archivesBaseName = modBaseName
+archivesBaseName = "$modBaseName-forge-1.7.10"
 
 compileJava   {
     sourceCompatibility = '1.8'
@@ -30,12 +30,12 @@ minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
 
-    replaceIn "RoleplayChat.java"
-    replace "@@MODID@@", archivesBaseName
+    replaceIn "RoleplayChatDices.java"
+    replace "@@MODID@@", modBaseName
     replace "@@VERSION@@", project.version
 
     replaceIn "mcmod.info"
-    replace "@@MODID@@", archivesBaseName
+    replace "@@MODID@@", modBaseName
     replace "@@VERSION@@", project.version
 }
 
