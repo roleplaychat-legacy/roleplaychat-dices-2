@@ -1,15 +1,15 @@
 package ru.xunto.roleplaychat.dices.forge_1_7_10;
 
 import net.minecraft.command.CommandBase;
+import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
+import org.jparsec.error.ParserException;
 import ru.xunto.roleplaychat.RoleplayChatCore;
+import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.DiceParser;
 import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IResult;
 import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.IRoll;
 import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.colored.TextPart;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollDice;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollNumber;
-import ru.xunto.roleplaychat.dices.forge_1_7_10.parser.roll.RollSum;
 import ru.xunto.roleplaychat.forge_1_7_10.ForgeSpeaker;
 import ru.xunto.roleplaychat.forge_1_7_10.ForgeWorld;
 import ru.xunto.roleplaychat.framework.api.Environment;
@@ -61,9 +61,18 @@ public class DiceCommand extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) {
-        EntityPlayerMP player = (EntityPlayerMP) sender;
+        if (!(sender instanceof EntityPlayerMP)) return;
 
-        IRoll roll = new RollSum(new RollDice(5, 20), new RollNumber(5));
+        EntityPlayerMP player = (EntityPlayerMP) sender;
+        String arg = String.join("", args);
+
+        IRoll roll;
+        try {
+            roll = DiceParser.parser().parse(arg);
+        } catch (ParserException e) {
+            throw new CommandException("Невозможно бросить такой дайс.");
+        }
+
         IResult result = roll.roll();
 
         this.sendDiceResult(player, roll, result);

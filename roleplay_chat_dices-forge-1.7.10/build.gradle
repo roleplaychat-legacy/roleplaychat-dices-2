@@ -39,7 +39,9 @@ minecraft {
     replace "@@VERSION@@", project.version
 }
 
-dependencies {}
+dependencies {
+    compile group: 'org.jparsec', name: 'jparsec', version: '3.0'
+}
 
 processResources {
     inputs.property "version", project.version
