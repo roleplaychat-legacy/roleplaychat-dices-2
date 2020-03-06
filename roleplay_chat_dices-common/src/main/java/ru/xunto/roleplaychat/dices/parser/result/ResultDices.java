@@ -27,7 +27,7 @@ public class ResultDices implements IResult {
 
     @Override
     public ColoredBuilder getColoredResult(ColoredBuilder builder) {
-        if (dices.size() > 5) {
+        if (dices.size() > 10) {
             builder.add("{");
             builder.add(Integer.toString(this.getFinalResult()));
             builder.add("}");
