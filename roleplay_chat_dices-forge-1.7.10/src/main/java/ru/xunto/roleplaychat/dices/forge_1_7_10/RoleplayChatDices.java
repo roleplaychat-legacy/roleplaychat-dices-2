@@ -1,10 +1,9 @@
 package ru.xunto.roleplaychat.dices.forge_1_7_10;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import net.minecraft.command.ICommandManager;
-import net.minecraft.command.ServerCommandManager;
-import net.minecraft.server.MinecraftServer;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import ru.xunto.roleplaychat.RoleplayChatCore;
+import ru.xunto.roleplaychat.dices.RollCommand;
 
 @Mod(modid = RoleplayChatDices.MODID, version = RoleplayChatDices.VERSION, acceptableRemoteVersions = "*", dependencies = "required-after:roleplaychat")
 public class RoleplayChatDices {
@@ -12,11 +11,7 @@ public class RoleplayChatDices {
     public static final String VERSION = "@@VERSION@@";
 
     @Mod.EventHandler
-    public void startServer(FMLServerStartingEvent event) {
-        MinecraftServer server = MinecraftServer.getServer();
-        ICommandManager command = server.getCommandManager();
-        ServerCommandManager manager = (ServerCommandManager) command;
-
-        manager.registerCommand(new ForgeRollCommand());
+    public void onInit(FMLInitializationEvent event) {
+        RoleplayChatCore.instance.register(new RollCommand());
     }
 }
