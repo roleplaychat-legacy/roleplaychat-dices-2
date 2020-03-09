@@ -1,0 +1,4 @@
+name: RoleplayChatDices
+version: "1.2.0"
+main: ru.xunto.roleplaychat.dices.spigot.RoleplayChatDices
+depend: ["RoleplayChat"]

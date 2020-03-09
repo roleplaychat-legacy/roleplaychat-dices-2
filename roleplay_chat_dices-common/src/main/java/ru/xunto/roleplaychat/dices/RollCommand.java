@@ -8,6 +8,8 @@ import ru.xunto.roleplaychat.dices.parser.DiceParser;
 import ru.xunto.roleplaychat.dices.parser.IResult;
 import ru.xunto.roleplaychat.dices.parser.IRoll;
 import ru.xunto.roleplaychat.dices.parser.colored.TextPart;
+import ru.xunto.roleplaychat.features.middleware.distance.Distance;
+import ru.xunto.roleplaychat.features.middleware.distance.DistanceMiddleware;
 import ru.xunto.roleplaychat.framework.api.Environment;
 import ru.xunto.roleplaychat.framework.api.Request;
 import ru.xunto.roleplaychat.framework.commands.CommandException;
@@ -39,6 +41,8 @@ public class RollCommand implements ICommand {
         state.setValue(RollCommand.roll, roll);
         state.setValue(RollCommand.result, result.getColoredResult().build());
         state.setValue(RollCommand.finalResult, result.getFinalResult());
+        state.setValue(DistanceMiddleware.FORCE_ENVIRONMENT, true);
+        state.setValue(DistanceMiddleware.DISTANCE, Distance.NORMAL);
 
         RoleplayChatCore.instance.process(request, environment);
     }

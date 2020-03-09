@@ -2,4 +2,5 @@ rootProject.name = 'roleplay_chat_dices'
 
 include 'roleplay_chat_dices-forge-1.7.10'
 include 'roleplay_chat_dices-common'
+include 'roleplay_chat_dices-spigot'
 

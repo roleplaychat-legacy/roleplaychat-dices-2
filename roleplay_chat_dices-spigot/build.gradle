@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+dependencies {
+    compile project(":roleplay_chat_dices-common")
+    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'version': project.version
+    }
+}
+
+shadowJar {
+    relocate 'org.slf4j', 'ru.xunto.org.slf4j'
+}

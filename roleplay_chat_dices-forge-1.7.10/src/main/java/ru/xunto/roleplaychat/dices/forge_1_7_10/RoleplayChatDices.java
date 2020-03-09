@@ -10,8 +10,11 @@ public class RoleplayChatDices {
     public static final String MODID = "@@MODID@@";
     public static final String VERSION = "@@VERSION@@";
 
+    static {
+        RoleplayChatCore.instance.register(new RollCommand());
+    }
+
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
-        RoleplayChatCore.instance.register(new RollCommand());
     }
 }
