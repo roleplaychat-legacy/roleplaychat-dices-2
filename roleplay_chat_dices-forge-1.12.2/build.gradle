@@ -68,6 +68,12 @@ dependencies {
 
     shade project(":roleplay_chat_dices-common")
 }
+// A fix for the build-time warning (which for some reason only occurs on Travis):
+//   :extractAnnotationsJarError while building FML annotations cache: duplicate entry: META-INF/fml_cache_annotation.json
+//   java.util.zip.ZipException: duplicate entry: META-INF/fml_cache_annotation.json
+// FML has a fallback to derive this annotation information at runtime, so this is not a major problem.
+// from https://github.com/CyclopsMC/IntegratedDynamics/blob/master-1.12/gradle/forge.gradle#L50
+extractAnnotationsJar.enabled = false
 
 processResources {
     // this will ensure that this task is redone when the versions change.
