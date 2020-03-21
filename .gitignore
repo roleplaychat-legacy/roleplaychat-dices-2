@@ -193,5 +193,5 @@ hs_err_pid*
 */.gradle/*
 */build/*
 /roleplay_chat-forge-1.7.10/eclipse/
-/.gradle/3.3/taskArtifacts/
 /roleplay_chat_dices-forge-1.7.10/eclipse/
+/.gradle/
