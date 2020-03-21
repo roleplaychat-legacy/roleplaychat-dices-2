@@ -1,0 +1,19 @@
+[
+{
+  "modid": "@@MODID@@",
+  "name": "RoleplayChatDices Mod",
+  "description": "Dices for  for RoleplayChat mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "xunto",
+    "Sargar"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
