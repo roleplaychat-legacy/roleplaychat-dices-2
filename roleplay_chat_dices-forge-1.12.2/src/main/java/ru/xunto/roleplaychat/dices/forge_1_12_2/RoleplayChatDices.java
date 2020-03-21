@@ -6,6 +6,8 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+import ru.xunto.roleplaychat.RoleplayChatCore;
+import ru.xunto.roleplaychat.dices.RollCommand;
 
 @Mod(modid = RoleplayChatDices.MODID, version = RoleplayChatDices.VERSION, acceptableRemoteVersions = "*", dependencies = "required-after:roleplaychat")
 public class RoleplayChatDices
@@ -14,6 +16,10 @@ public class RoleplayChatDices
     public static final String VERSION = "@@VERSION@@";
 
     private static Logger logger;
+
+    static {
+        RoleplayChatCore.instance.register(new RollCommand());
+    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
