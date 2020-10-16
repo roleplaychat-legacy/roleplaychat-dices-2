@@ -1,7 +1,7 @@
 package ru.xunto.roleplaychat.dices.parser.result;
 
 import ru.xunto.roleplaychat.dices.parser.IResult;
-import ru.xunto.roleplaychat.dices.parser.colored.ColoredBuilder;
+import ru.xunto.roleplaychat.framework.state.values.colored_array.ColoredBuilder;
 
 public class ResultNumber implements IResult {
     private int result;

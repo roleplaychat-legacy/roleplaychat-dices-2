@@ -1,8 +1,8 @@
 package ru.xunto.roleplaychat.dices.parser.result;
 
 import ru.xunto.roleplaychat.dices.parser.IResult;
-import ru.xunto.roleplaychat.dices.parser.colored.ColoredBuilder;
 import ru.xunto.roleplaychat.dices.parser.roll.RollDice;
+import ru.xunto.roleplaychat.framework.state.values.colored_array.ColoredBuilder;
 
 public class ResultDice implements IResult {
     private RollDice dice;

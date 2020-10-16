@@ -1,5 +1,7 @@
 dependencies {
     compile group: 'org.jparsec', name: 'jparsec', version: '3.0'
-    compileOnly "org.jtwig:jtwig-core:5.87.0.RELEASE"
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
+    compileOnly "io.pebbletemplates:pebble:3.1.4"
     compileOnly fileTree("libs")
+
 }
